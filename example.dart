@@ -22,13 +22,14 @@ List<List<int>> create2DArray(int rows, int cols) {
   return arr;
 }
 // use this method to sort on the basis of column index.
-List<List<int>> sort2DArray(List<List<int>> arr, int col) {
+List<List<int>> sort2DArrayColumnValues(List<List<int>> arr, int columnIndex) {
+  print(arr);
   for (int i = 0; i < arr.length; i++) {
-    for (int j = i + 1; j < arr.length; j++) {
-      if (arr[i][col] > arr[j][col]) {
-        var temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+    for (int j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j][columnIndex] > arr[j + 1][columnIndex]) {
+        int temp = arr[j][columnIndex];
+        arr[j][columnIndex] = arr[j + 1][columnIndex];
+        arr[j + 1][columnIndex] = temp;
       }
     }
   }
