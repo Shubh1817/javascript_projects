@@ -21,7 +21,7 @@ List<List<int>> create2DArray(int rows, int cols) {
   }
   return arr;
 }
-
+// use this method to sort on the basis of column index.
 List<List<int>> sort2DArray(List<List<int>> arr, int col) {
   for (int i = 0; i < arr.length; i++) {
     for (int j = i + 1; j < arr.length; j++) {
