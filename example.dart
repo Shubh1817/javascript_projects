@@ -6,7 +6,9 @@ void main() {
   print("Enter the number of columns: ");
   int cols = int.parse(stdin.readLineSync()!);
   List<List<int>> arr = create2DArray(rows, cols);
-  print(arr);
+    print("Enter the sort index of columns: ");
+  int colsIndex = int.parse(stdin.readLineSync()!);
+  print(sort2DArrayColumnValues(arr, colsIndex));
 }
 
 List<List<int>> create2DArray(int rows, int cols) {
@@ -35,3 +37,7 @@ List<List<int>> sort2DArrayColumnValues(List<List<int>> arr, int columnIndex) {
   }
   return arr;
 }
+
+
+// [[11, 12, 1], [112, 114, 0], [1, 2, 5]] --> input array
+// [[11, 12, 0], [112, 114, 1], [1, 2, 5]] --> output array
